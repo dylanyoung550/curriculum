@@ -8,8 +8,7 @@
 const solution = (a, b) => {
   if (a === 0) return;
   b();
-  a = a - 1;
-  return solution(a, b);
+  return solution(a - 1, b);
 }
 module.exports = {
   solution,
