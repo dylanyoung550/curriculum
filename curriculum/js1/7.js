@@ -5,8 +5,16 @@
  * @returns {boolean}
  */
 
-const solution = (a) => {
-  return 0;
+const solution = (a, i = 2) => {
+  if(a === 2) return true;
+ 
+  if(a < 2 || i === a) return false;
+
+  if(a % i === 0) return false;
+
+  if(a % i !== 0) return true;
+
+  return solution(a, i + 1)
 };
 
 module.exports = {
