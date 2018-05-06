@@ -5,8 +5,21 @@
  * @returns {array}
  */
 
-const solution = (a) => {
-  return [];
+const isPrime = (a, i=2) => {
+if(a<=1) return false;
+if(i===a) return true;
+if(a % i === 0) return false;
+return isPrime(a, i + 1);
+}
+const solution = (a = [], array = [], i = 0) => {
+  console.log(array)
+  if(i===a.length) return array;
+  if(!isPrime(a[i])){
+    array.push(1);
+  } else {
+    array.push(a[i]);
+  }
+  return solution(a, array, i+1);
 };
 
 module.exports = {
