@@ -5,7 +5,12 @@
  */
 
 const solution = (obj)=>{
-  return 0;
+  return Object.values(obj).reduce((largestValue, value) => {
+    if(value > largestValue) {
+      largestValue = value;
+     } 
+    return largestValue;
+  })
 }
 
 module.exports = {
